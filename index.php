@@ -56,9 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b60ccad9ed.js" crossorigin="anonymous"></script>
-    
-
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="nav-wrapper flex sticky space-between">
 
-            <a href="#home" id="logo"></a>
+            <a href=#header id="logo"></a>
         
             <nav class="nav-top">
                 
@@ -81,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </label>
                 
                 <ul class="nt">
-                    <li><a href=#logo>Accueil</a></li>
+                    <li><a href=#header>Accueil</a></li>
                     <li><a href=#about>À propos</a></li>
                     <li><a href=#work>Réalisations</a></li>
                     <li><span>CONTACT</span></li>
@@ -233,44 +230,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     </section>
 
-    <footer>
-        <nav class="nav-bottom flex align-start flex-wrap">
-            <div class="contact">
-                <p><span>CONTACT</span></p>
-                <a href="mailto:e.raffalli@hotmail.fr">e.raffalli@hotmail.fr</a>
-            </div>
-            
-            <ul>
-                <li><a href=#logo>Accueil</a></li>
-                <li><a href=#about>À propos</a></li>
-                <li><a href=#work>Réalisations</a></li>
-            </ul>
-        </nav>
-
-
-        <div class="bottom flex space-between align-center">
-            <div>
-                <p>© Emilia Raffalli 2024</p>
-            </div>
-
-                <ul class="flex justify-end social-media-footer">
-                    <li>
-                        <a href="https://www.linkedin.com/in/emiliaraffalli">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/Emilia-Raffalli">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/emi.raffalli/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </li>
+    <footer id ="footer">
+           
+            <nav class="nav-bottom flex align-start flex-wrap">
+                <div class="contact">
+                    <p><span>CONTACT</span></p>
+                    <a href="mailto:e.raffalli@hotmail.fr">e.raffalli@hotmail.fr</a>
+                </div>
+                
+                <ul>
+                    <li><a href=#logo>Accueil</a></li>
+                    <li><a href=#about>À propos</a></li>
+                    <li><a href=#work>Réalisations</a></li>
                 </ul>
-        </div>
+            </nav>
+
+
+            <div class="bottom flex space-between align-center">
+                <div>
+                    <p>© Emilia Raffalli 2024</p>
+                </div>
+
+                    <ul class="flex justify-end social-media-footer">
+                        <li>
+                            <a href="https://www.linkedin.com/in/emiliaraffalli">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Emilia-Raffalli">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/emi.raffalli/">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+            </div>
 
     </footer>
 
