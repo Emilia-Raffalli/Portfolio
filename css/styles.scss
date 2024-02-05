@@ -63,6 +63,7 @@ header {
     background-position-x:-30px;
     background-position-y:-80px;
     width:100%;
+    position:relative;
 }
 
 header *{
@@ -202,13 +203,14 @@ input[type="checkbox"]:checked ~ .line-menu-2 {
     top:30px;
     padding:30px 30px 0px 0px;
     transition: background-color 0.7s ease;
+    z-index: 101;
 }
 
 .nav-top ul.nt {
     min-width:350px;
     padding:0px 50px 90px 50px;
     display:none;
-
+    
     transition: transform 0.3s ease, background-color 0.3s ease;
     // transform-origin: top;
     // transform: translateY(100%);
@@ -268,12 +270,16 @@ ul.social-media i {
 
 #about {
     background-color: $bg4;
+    height:80vh;
 }
 
 .picture-container {
-    position: relative;
+    // position: relative;
     width: 300px;
     height: 300px;
+    margin-right:50px;
+    background-color: #17252A;
+
 }
 
 .picture {
@@ -281,26 +287,23 @@ ul.social-media i {
     background-size: cover;
     width: 100%;
     height: 100%;
-    position:relative;
-    z-index:2;
+    // position:relative;
+    // z-index:2;
     // border-radius: 15px; 
 }
 
-.frame {
-    position: absolute;
-    top: 30px; 
-    left: -30px; 
-    width: 300px; 
-    height: 300px; 
-    border: 2px solid $secondColor; 
-    // background-color: #cbc9e2;
-    // border-radius: 15px; /* ajustez la valeur de la bordure selon vos préférences */
-    z-index: 1;
-}
+// .frame {
+//     // position: absolute;
+//     top: 30px; 
+//     left: -30px; 
+//     width: 300px; 
+//     height: 300px; 
+//     border: 2px solid $secondColor; 
+// //     z-index: 1;
+// }
 
 .text-content {
-    padding: 0 0px 0 80px; 
-    max-width:650px;
+    max-width:600px;
 }
 
 #introduce {
@@ -354,7 +357,7 @@ i.fa-brands:hover {
 }
 
 .all-cards {
-    margin-left: 0px; /* Compense la marge négative sur le conteneur parent */
+    margin-left: 0px; 
     margin-top:50px;
 }
 
@@ -420,31 +423,83 @@ section {
 
 @media screen and (max-width:468px) {
     
-    section, footer, .nav-wrapper {
-        padding:50px 50px;
+    .nav-wrapper {
+        padding:20px 20px;
     }
 
+    section, footer {
+        padding:20px 35px!important;
 
-    h1 {
-        font-size: 2em;
+    }
+
+    h1, h2{
+        font-size: 2.1em;
         line-height: 1.3em;
     }
-
-
 
     .nav-top {
         position : absolute;
         right:0px;
         top:0px;
         width:100%;
+        // height:100vh;
+        z-index: 101;
     }
 
     .form-contact {
-        width:100%;
+       padding: 0px!important; 
+        width: 100%!important;
+        margin: auto;
+    }
 
+    .text-content {
+        padding: 0; 
+        max-width: 100%; 
+    }
+
+    .card {
+        width:100%;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+
+    .picture-container {
+        width: 200px;
+        height: 200px;
+        margin-right:0px;
+    }
+    
+    .frame {
+        width: 200px; 
+        height: 200px; 
+    }
+
+    #section-nav.nav-right {
+        display:none;
+    }
+
+    #introduce {
+        padding-top: 115px;
+    }
+
+    footer {
+        flex-direction: column!important;
     }
 
 }
+
+
+@media screen and (min-width:960px) {
+    .nav-bottom {
+        display: flex;
+}
+}
+
+
+
+
 
 // main-nav
 
@@ -455,7 +510,7 @@ section {
     // transform: translateX(-50%);
     // background-color: #fff;
     padding: 10px; 
-    z-index: 1000; 
+    z-index: 101; 
 }
 
 .nav-bullet {
@@ -584,12 +639,12 @@ section {
 
 
 .btn {
-    position:absolute;
+    // position:absolute;
     width: 250px;
     height:50px;
     left:0;
     top:0;
-    z-index: 101;
+    // z-index: 101;
     background-color: transparent;
     border: none;
     transition-duration: 0.4s;

@@ -1,45 +1,6 @@
 <?php
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $lastName = $_POST['lastName'];
-    $email = $_POST['email'];
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
-
-    $errors = [];
-
-    if (strlen($lastName) <= 3) { // nom doit être supérieur ou égal à 3 lettres
-        $errors['lastName'] = "Votre nom doit comporter au moins 3 caractères.";
-    }
-
-    // Validation de l'adresse email
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = "Veuillez saisir une adresse email valide.";
-    }
-
-    $to = "e.raffalli@hotmail.fr";
-    $subject = "Nouveau message de $lastName";
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $messageBody = "Nom: $lastName\n";
-    $messageBody .= "Email: $email\n";
-    $messageBody .= "Objet: $subject\n";
-    $messageBody .= "Message:\n$message";
-
-    $success = mail($to, $subject, $messageBody, $headers);
-
-    if ($success) {
-        $messageSendMail = "Votre message a été envoyé avec succès. Merci !";
-    } else {
-        $error['sendMail'] = "Une erreur s'est produite lors de l'envoi du message.";
-    }
-}
-
-
+include ('contact.php');
 ?>
-
-
-
 
 
 <!DOCTYPE html>
@@ -129,13 +90,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </section>
     </header>
 
-    <section id="about" class="flex wrap align-center justify-center">
+    <section id="about" class="flex wrap align-center justify-center space-between">
        
+
         <div class='picture-container'>
             <div class="picture"></div>
             <div class="frame"></div>
         </div>
         
+
         <div class='text-content flex-column'>
             <h2>À propos</h2>
             <p>Le partage est une dimension essentielle qui m’attire dans le métier du développement web, basé sur l’interrogation constante et la remise en question. Contribuer aux réflexions technologiques au sein d’une équipe dynamique et expérimentée est une source de motivation.
@@ -145,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <section id="work">
         <h2>Réalisations</h2>
-        <div class="all-cards flex wrap">
+        <div class="all-cards flex wrap justify-center">
             <div class="card">
                 <div class="header-card">
                     <img src="#">
@@ -183,12 +146,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="card">
                 <div class="header-card">
-                    <img src="#">
+                    <img src="img/projets/emilia-raffalli-graphisme.jpg" alt="Portfolio de graphiste: Emilia Raffalli" width="100%">
                 </div>
                 <div class="body-card">
                     <h3>Graphisme</h3>
                     <p>HTML / CSS / Jquery</p>
-                    <a href="#">Lien du projet 4</a>
+                    <a href="https://emiliaraffalli.fr/">emiliaraffalli.fr</a>
                 </div>
             </div>
         </div>
@@ -232,7 +195,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <footer id ="footer">
            
-            <nav class="nav-bottom flex align-start flex-wrap">
+            <nav class="nav-bottom">
                 <div class="contact">
                     <p><span>CONTACT</span></p>
                     <a href="mailto:e.raffalli@hotmail.fr">e.raffalli@hotmail.fr</a>
