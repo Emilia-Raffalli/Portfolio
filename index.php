@@ -109,29 +109,29 @@ include ('contact.php');
     <section id="work">
         <h2>Réalisations</h2>
         <div class="all-cards flex wrap justify-center">
-            <div class="card">
-                <div class="header-card">
-                    <img src="#">
+            <a href="https://emilia-raffalli.github.io/guess-my-number/">
+                <div class="card">
+                    <div class="header-card">
+                    <img src="img/projets/guess-my-number.jpg" alt="Devine le nombre : jeu réalisé en javascript" width="100%">
+                    </div>
+                    <div class="body-card">
+                        <h3>Guess my number</h3>
+                        <p>JAVASCRIPT / HTML / SASS</p>
+                    </div>
                 </div>
-                <div class="body-card">
-                    <h3>Guess my number</h3>
-                    <p>JAVASCRIPT / HTML / SASS</p>
-                    <a href="#">Lien du projet 1</a>
-                </div>
+            </a>
 
-            </div>
-
-            <div class="card">
-                <div class="header-card">
-                    <img src="#">
+            <a href="#">
+                <div class="card">
+                    <div class="header-card">
+                        <img src="#">
+                    </div>
+                    <div class="body-card">
+                        <h3>Pet Sitter</h3>
+                        <p>PHP / HTML / CSS3</p>
+                    </div>
                 </div>
-                <div class="body-card">
-                    <h3>Pet Sitter</h3>
-                    <p>PHP / HTML / CSS3</p>
-                    <a href="#">Lien du projet 2</a>
-                </div>
-
-            </div>
+            </a>
 
             <div class="card">
                 <div class="header-card">
@@ -144,16 +144,17 @@ include ('contact.php');
                 </div>
             </div>
 
-            <div class="card">
-                <div class="header-card">
-                    <img src="img/projets/emilia-raffalli-graphisme.jpg" alt="Portfolio de graphiste: Emilia Raffalli" width="100%">
+            <a href="https://emiliaraffalli.fr/">
+                <div class="card">
+                    <div class="header-card">
+                        <img src="img/projets/emilia-raffalli-graphisme.jpg" alt="Portfolio de graphiste: Emilia Raffalli" width="100%">
+                    </div>
+                    <div class="body-card">
+                        <h3>Graphisme</h3>
+                        <p>HTML / CSS / Jquery</p>
+                    </div>
                 </div>
-                <div class="body-card">
-                    <h3>Graphisme</h3>
-                    <p>HTML / CSS / Jquery</p>
-                    <a href="https://emiliaraffalli.fr/">emiliaraffalli.fr</a>
-                </div>
-            </div>
+            </a>
         </div>
         
     </section>

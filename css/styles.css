@@ -515,10 +515,12 @@ section {
 }
 
 .btn {
+  position: absolute;
   width: 250px;
   height: 50px;
   left: 0;
   top: 0;
+  z-index: 101;
   background-color: transparent;
   border: none;
   transition-duration: 0.4s;
