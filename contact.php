@@ -1,5 +1,35 @@
 <?php
 
+
+
+
+
+$errors = [
+    'color' => 'red',
+    'lastName' => 'Votre nom doit comporter au moins 3 caractères.',
+    'email' => 'Veuillez saisir une adresse email valide.'
+];
+
+$success = [
+    'color' => 'green',
+    'sendMessage' => 'Message envoyé ! Merci :)',
+];
+
+var_dump($errors['color']);
+var_dump($success['color']);
+var_dump($success['sendMessage']);
+
+
+
+
+// $message[]=['errors'=>
+// ['color'=>'red'],
+// ['lastName'=>'Votre nom doit comporter au moins 3 caractères.'],
+// ['email'=> 'Veuillez saisir une adresse email valide.']
+// ];
+
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastName = $_POST['lastName'];
     $email = $_POST['email'];
@@ -9,12 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
     if (strlen($lastName) <= 3) { // nom doit être supérieur ou égal à 3 lettres
-        $errors['lastName'] = "Votre nom doit comporter au moins 3 caractères.";
+        $errors['lastName'];
     }
 
     // Validation de l'adresse email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = "Veuillez saisir une adresse email valide.";
+        $errors['email'];
     }
 
     $to = "e.raffalli@hotmail.fr";
@@ -35,7 +65,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-
+// var_dump($_POST);
+// // var_dump($errors);
 ?>
 
 

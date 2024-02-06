@@ -1,6 +1,3 @@
-
-
-
 console.log('hello');
 
 // document.getElementById("logo").addEventListener("click", function() {
@@ -13,9 +10,23 @@ document.addEventListener('DOMContentLoaded', function () {
     let menuList = document.querySelector('.nav-top ul');
     let navElt = document.querySelector('.nav-top');
 
+    function changeCheckboxColorAccordingToScrollPosition(scrollPosition, offset, sectionTop, sectionBottom, section) {
+        const currentMenuElts = document.querySelectorAll('.line-menu-1, .line-menu-2');
+        const checkboxElt = document.querySelector('input[type="checkbox"]');
 
+        if (scrollPosition >= sectionTop - offset && scrollPosition < sectionBottom) {
+            if ((section.id === 'header' || section.id === 'footer') && !checkboxElt.checked) {
+                currentMenuElts.forEach(currentMenuElt => {
+                    currentMenuElt.style.backgroundColor = '#ffffff';
+                });
+            } else {
+                currentMenuElts.forEach(currentMenuElt => {
+                    currentMenuElt.style.backgroundColor = '#282dc1';
+                });
+            }
+        }
 
-
+    }
 
     //Enregistrement de l'état du menu dans le local storage
     const storedMenuState = JSON.parse(localStorage.getItem('menuState'));
@@ -30,27 +41,27 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-
-
-
     buttonNavElts.forEach(function(buttonNavElt, index) {
         const savedColor = sessionStorage.getItem('button_${index}');
         buttonNavElt.style.backgroundColor = savedColor || 'transparent';
     });
 
     checkbox.addEventListener('change', function () {
+        const currentMenuElts = document.querySelectorAll('.line-menu-1, .line-menu-2');
+
         if (checkbox.checked) {
+            currentMenuElts.forEach(currentMenuElt => {
+                currentMenuElt.style.backgroundColor = '#282dc1';
+            });
             menuList.classList.add('visible');
 
             menuList.style.display = 'block';
             navElt.style.backgroundColor = 'white'; 
-
         } else {
             // Si elle n'est pas cochée, masquer la liste ul
             menuList.style.display = 'none';
             navElt.style.backgroundColor = 'transparent'; 
-            menuList.style.display('none');
-
+            onScroll();
         }
     });
 
@@ -58,8 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
        // ajout de la classe visible
         menuList.classList.toggle('visible');
     });
-
-
 
 
     buttonNavElts.forEach(function(buttonNavElt, index) {
@@ -75,15 +84,10 @@ document.addEventListener('DOMContentLoaded', function () {
             this.style.transition = 'background-color 0.3s, transform 0.5s';
             sessionStorage.setItem(`button_${index}`, '#F64C72');
         });
-
-
     });
 
-
-
     // Changer de couleur au scroll / changement de logo
-
-    window.addEventListener('scroll', function () {
+    function onScroll(){
         const scrollPosition = window.scrollY;
         const sections = document.querySelectorAll('header, #about, #work, #contact, footer');
     
@@ -103,28 +107,22 @@ document.addEventListener('DOMContentLoaded', function () {
                     currentMenuElt.style.backgroundColor = '#282dc1';
                 });
                 logo.classList.remove('logo-about', 'logo-work', 'logo-contact', 'logo-footer');
-
             } 
+
+            // function changeCheckboxColorAccordingToScrollPosition(scrollPosition, offset, sectionTop, sectionBottom, section)
+
+            changeCheckboxColorAccordingToScrollPosition(scrollPosition, offset, sectionTop, sectionBottom, section);
+
             if (scrollPosition >= sectionTop - offset && scrollPosition < sectionBottom) {
-                    if ((section.id === 'header' || section.id === 'footer') && !checkboxElt.checked) {
-                        currentMenuElts.forEach(currentMenuElt => {
-                            currentMenuElt.style.backgroundColor = '#ffffff';
-                        });
-                    } else {
-                        currentMenuElts.forEach(currentMenuElt => {
-                            currentMenuElt.style.backgroundColor = '#282dc1';
-                        });
-                    }
-    
                     logo.classList.remove('logo-about', 'logo-work', 'logo-contact', 'logo-footer');
                     logo.classList.add(`logo-${section.id}`);
             }
         });
-        
+    }
+
+    window.addEventListener('scroll', function () {
+        onScroll();
     });
-
-
-
 
 });
 
